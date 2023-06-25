@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "504044633798",
+    "project_id": "real-estate-dapp-925e1",
+    "storage_bucket": "real-estate-dapp-925e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504044633798:android:54c24d9d031c3dd114a1c7",
+        "android_client_info": {
+          "package_name": "com.example.firebase_setup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "504044633798-lp5kcjgaqaip3k9du7plt5a8sq2vkaf9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKCCE_D48zgK9S2RHqfoTpOVJozVN4gzM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "504044633798-lp5kcjgaqaip3k9du7plt5a8sq2vkaf9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
