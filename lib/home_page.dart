@@ -228,6 +228,22 @@ class _HomePageState extends State<HomePage> {
                 );
               },
             ),
+            ListTile(
+              title: Text('My profile'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('My profile'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),
+                );
+              },
+            ),
           ],
         ),
       ),

@@ -5,6 +5,9 @@ import 'package:test/smart_contract_link.dart';
 import 'Listings.dart';
 import 'package:provider/provider.dart';
 import 'package:test/makeOffer.dart';
+import 'view_profile.dart';
+import 'wallet.dart';
+import 'package:test/properties_owned.dart';
 
 class Offer {
   final String buyerName;
@@ -125,6 +128,87 @@ class _OffersReceivedPageState extends State<OffersReceivedPage> {
                       ),
                     ],
                   ),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    child: Icon(Icons.person),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Username',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                    ),
+                  ),
+                  Text(
+                    'user@email.com',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              title: Text('My Wallet'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => WalletPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('My properties'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const PropertiesOwnedPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('My listings'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ListedPropertiesPage(description: '', offers: [], price: null,)),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('My profile'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('My profile'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('My profile'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),
                 );
               },
             ),

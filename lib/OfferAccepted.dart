@@ -132,6 +132,26 @@ class _PropertyDetailsPageState extends State<PropertyDetailsPage> {
               },
             ),
             ListTile(
+              title: Text('My listings'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                 MaterialPageRoute(builder: (context) => PropertiesOwnedPage()),
+                );
+                
+              },
+            ),
+            ListTile(
+              title: Text('My listings'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                 MaterialPageRoute(builder: (context) => PropertiesOwnedPage()),
+                );
+                
+              },
+            ),
+            ListTile(
               title: Text('My profile'),
               onTap: () {
                 Navigator.push(

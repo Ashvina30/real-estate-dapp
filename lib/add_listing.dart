@@ -263,8 +263,8 @@ final listing = Listing(
 
 try {
   // TODO: Submit the listing data to Ethereum smart contract.
-  // This is where you'd call your function to submit the listing to the blockchain.
-  // After the function has been called and the transaction is confirmed, you can continue to save the image and property ID in Firebase.
+  // call function to submit the listing to the blockchain.
+  // After the function has been called and the transaction is confirmed,  continue to save the image and property ID in Firebase.
   Future<void> _uploadListing(Listing listing) async {
   await _firestore.collection('listings').add({
     'title': listing.title,

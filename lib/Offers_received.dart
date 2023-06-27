@@ -108,6 +108,7 @@ class _OffersReceivedPageState extends State<OffersReceivedPage> {
           ),
         ],
       ),
+      
     );
   }
 }

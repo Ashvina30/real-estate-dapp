@@ -5,6 +5,12 @@ import 'offers_sent.dart';
 import 'offers_sent.dart';
 import 'package:provider/provider.dart';
 import 'Offers_received.dart';
+import 'view_profile.dart';
+import 'wallet.dart';
+import 'package:test/properties_owned.dart';
+import 'Listings.dart';
+
+
 
 class OfferPage extends StatefulWidget {
   final String image;
@@ -72,15 +78,95 @@ class _OfferPageState extends State<OfferPage> {
             SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: () {
-                // You need to decide who is the buyer, in this case, I assume it's a hardcoded value
                 Offer offer = Offer(
-                  buyerName: 'John Doe',
+                  buyerName: 'John',
                   amount: _offerPrice,
                 );
-                // Now, add this `offer` to your `OffersReceivedPage`'s `_offers` list somehow, or a global provider.
+                //add this `offer` to  `OffersReceivedPage`'s `_offers` list somehow, or a global provider.
                 print('Offer price: $_offerPrice');
               },
               child: Text('Make Offer'),
+            ),
+          ],
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    child: Icon(Icons.person),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Username',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                    ),
+                  ),
+                  Text(
+                    'user@email.com',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              title: Text('My Wallet'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => WalletPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('My properties'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => const PropertiesOwnedPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('My listings'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ListedPropertiesPage(description: '', offers: [], price: null,)),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('My profile'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('My profile'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('My profile'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),
+                );
+              },
             ),
           ],
         ),

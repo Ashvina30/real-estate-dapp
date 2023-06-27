@@ -8,7 +8,7 @@ class UserOnboardingPage extends StatefulWidget {
 class _UserOnboardingPageState extends State<UserOnboardingPage> {
   int _currentPage = 0;
   final PageController _pageController = PageController(initialPage: 0);
-  List<Map<String, String>> onboardingData = [    {      'title': 'Welcome to MyApp',      'subtitle': 'This is the best app ever',      'image': 'assets/images/welcome.png',    },    {      'title': 'Awesome Features',      'subtitle': 'We have lots of features',      'image': 'assets/images/features.png',    },    {      'title': 'Get Started',      'subtitle': 'Create your account now',      'image': 'assets/images/get_started.png',    },  ];
+  List<Map<String, String>> onboardingData = [    {      'title': 'Welcome to MyApp',      'subtitle': 'Buy and sell real estate',      'image': 'assets/images/welcome.png',    },    {      'title': 'Awesome Features',      'subtitle': 'We have lots of features',      'image': 'assets/images/features.png',    },    {      'title': 'Get Started',      'subtitle': 'Create your account now',      'image': 'assets/images/get_started.png',    },  ];
 
   @override
   Widget build(BuildContext context) {

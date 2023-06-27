@@ -166,6 +166,22 @@ class _ListedPropertiesPageState extends State<ListedPropertiesPage> {
               },
             ),
             ListTile(
+              title: Text('My profile'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),
+                );
+              },
+            ),
+            ListTile(
+              title: Text('My profile'),
+              onTap:() {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),
+                );
+              },
+            ),
+            ListTile(
               title: Text('Sign Out'),
               onTap: () {
                 // implement the sign out functionality
@@ -174,6 +190,7 @@ class _ListedPropertiesPageState extends State<ListedPropertiesPage> {
           ],
         ),
       ),
+      
 
     );
   }
