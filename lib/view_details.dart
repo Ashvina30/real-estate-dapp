@@ -44,8 +44,6 @@ class PropertyDetailsPage extends StatefulWidget {
     required this.buyer,
     required this.propertyID,
     required this.transactionID
-
-
   });
 
   @override

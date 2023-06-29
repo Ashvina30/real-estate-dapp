@@ -4,26 +4,27 @@ import 'package:uuid/uuid.dart';
 import 'package:test/payment_successful.dart'; // Import PaymentSuccessfulPage
 import 'home_page.dart';
 import 'package:provider/provider.dart';
+import 'add_listing.dart';
 
 class PurchaseOverviewPage extends StatefulWidget {
-  final String propertyID;
-  final String propertyTitle;
-  final double price;
+  //final String propertyID;
+  //final String propertyTitle;
+  //final double price;
   final double tax;
   final String ownerName;
-  final String ownerID;
+  //final String ownerID;
   final double priceOffered;
-  final String imagePath;
+  //final String imagePath;
 
   PurchaseOverviewPage({
-    required this.propertyID,
-    required this.propertyTitle,
-    required this.price,
+    //required this.propertyID,
+    //required this.propertyTitle,
+    //required this.price,
     required this.tax,
     required this.ownerName,
-    required this.ownerID,
+    //required this.ownerID,
     required this.priceOffered,
-    required this.imagePath,
+    //required this.imagePath,
   });
 
   @override

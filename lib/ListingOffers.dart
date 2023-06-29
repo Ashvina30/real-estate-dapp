@@ -16,7 +16,7 @@ class Offer {
   Offer({required this.buyerName, required this.amount, required String image, required String price, required String ownerName, required String offeredPrice});
 }
 
-class OffersReceivedPage extends StatefulWidget {
+/*class OffersReceivedPage extends StatefulWidget {
   final String image;
   final String price;
   final String ownerName;
@@ -34,7 +34,7 @@ class OffersReceivedPage extends StatefulWidget {
 
   @override
   _OffersReceivedPageState createState() => _OffersReceivedPageState();
-}
+}*/
 
 class _OffersReceivedPageState extends State<OffersReceivedPage> {
   List<Offer> _offers = [

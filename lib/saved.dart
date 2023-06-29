@@ -9,6 +9,7 @@ import 'package:test/smart_contract_link.dart';
 import 'view_details.dart';
 import 'package:provider/provider.dart';
 import 'firebase_auth.dart';
+import 'view_details.dart';
 
 class Listing {
   final String imageUrl;

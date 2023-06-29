@@ -6,27 +6,12 @@ import 'package:test/wallet.dart';
 import 'package:test/view_profile.dart';
 import 'package:test/properties_owned.dart';
 import 'signup.dart';
-import 'saved.dart';
+import 'saved.dart' hide Listing;
 import 'package:flutter/gestures.dart';
 import 'package:web3dart/web3dart.dart';
 import 'package:test/smart_contract_link.dart';
 import 'package:provider/provider.dart';
 
-class Listing {
-  final String id;
-  final String imageUrl;
-  final String title;
-  final String description;
-  final String price;
-
-  Listing({
-    required this.id,
-    required this.imageUrl,
-    required this.title,
-    required this.description,
-    required this.price, required String propertyType,
-  });
-}
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -42,7 +27,8 @@ class _HomePageState extends State<HomePage> {
     'Houses',
     'Residential Land',
     'Wasteland',
-    'Beach Houses'
+    'Beach Houses',
+    'agricultural land'
   ];
 
   int _selectedIndex = 0;
@@ -130,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                listing.price,
+                                Listing.price,
                                 style: const TextStyle(
                                   fontSize: 24,
                                   fontWeight: FontWeight.bold,

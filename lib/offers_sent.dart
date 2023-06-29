@@ -7,7 +7,7 @@ import 'wallet.dart';
 import 'Listings.dart';
 import 'properties_owned.dart';
 
-class OffersSent {
+/*class OffersSent {
   final String imageUrl;
   final String title;
   final String description;
@@ -21,7 +21,7 @@ class OffersSent {
     required this.price,
     required this.offerStatus,
   });
-}
+}*/
 
 class ListingPage extends StatefulWidget {
   final List<OffersSent> listings;
