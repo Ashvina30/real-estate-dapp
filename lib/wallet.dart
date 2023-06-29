@@ -1,3 +1,4 @@
+  // Import necessary Flutter and custom packages
 import 'package:flutter/material.dart';
 import 'package:test/home_page.dart';
 import 'Listings.dart';
@@ -8,18 +9,24 @@ import 'package:test/smart_contract_link.dart';
 import 'package:provider/provider.dart';
 import 'view_profile.dart';
 
+// This is the main wallet page that is stateful as it can update over time
 class WalletPage extends StatefulWidget {
   @override
   _WalletPageState createState() => _WalletPageState();
 }
 
+// This is the state class that goes with WalletPage. It includes fields and methods that define the widget’s behavior
 class _WalletPageState extends State<WalletPage> {
+  // Variable to hold the current balance value
   double balance = 3500.0;
 
+  // A list to store all the transactions made
   List<Transaction> transactions = [];
 
+  // Variable to store the current selected index for the bottom navigation bar
   int _selectedIndex = 0;
 
+  // This method is triggered when a navigation bar item is selected. It uses a switch statement to navigate to the appropriate page based on the selected index.
   void _onItemTapped(int index) {
     if (index == 0) {
       Navigator.push(
@@ -43,15 +50,19 @@ class _WalletPageState extends State<WalletPage> {
     }
   }
 
+  // The build method of this widget. It describes the part of the user interface represented by the widget.
   @override
   Widget build(BuildContext context) {
+    // Using Provider to access smart contract link
     var contractLink = Provider.of<Smart_Contract_Link>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('Wallet'),
       ),
+      // The body of this page contains a column of widgets, including a container displaying balance and a list view builder to generate a list of transactions.
       body: Column(
         children: [
+          // This container widget displays the current balance
           Container(
             padding: EdgeInsets.all(20.0),
             color: Colors.blue,
@@ -77,6 +88,7 @@ class _WalletPageState extends State<WalletPage> {
               ],
             ),
           ),
+          // This expanded widget includes a list view builder to create a dynamic list of transaction entries.
           Expanded(
             child: ListView.builder(
               itemCount: transactions.length,
@@ -91,7 +103,7 @@ class _WalletPageState extends State<WalletPage> {
                   trailing: Text(
                     '${transaction.amount.toStringAsFixed(2)}',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.bold,            
                       color: transaction.type == 'Credit' ? Colors.green : Colors.purple,
                     ),
                   ),
@@ -101,6 +113,7 @@ class _WalletPageState extends State<WalletPage> {
           ),
         ],
       ),
+      // The bottom navigation bar of the app. Handles navigation between different pages of the app
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         fixedColor: Colors.blue,
@@ -120,9 +133,11 @@ class _WalletPageState extends State<WalletPage> {
           ),
         ],
       ),
+      // The navigation drawer of the app. It contains links to other pages
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
+            // The header section of the drawer
             DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.blue,
@@ -130,10 +145,12 @@ class _WalletPageState extends State<WalletPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // The user's avatar
                   CircleAvatar(
                     child: Icon(Icons.person),
                   ),
                   const SizedBox(height: 16),
+                  // The user's username
                   Text(
                     'Username',
                     style: TextStyle(
@@ -141,6 +158,7 @@ class _WalletPageState extends State<WalletPage> {
                       fontSize: 24,
                     ),
                   ),
+                  // The user's email address
                   Text(
                     'user@email.com',
                     style: TextStyle(
@@ -150,6 +168,7 @@ class _WalletPageState extends State<WalletPage> {
                 ],
               ),
             ),
+            // A list tile leading to the WalletPage
             ListTile(
               title: Text('My Wallet'),
               onTap:() {
@@ -158,6 +177,7 @@ class _WalletPageState extends State<WalletPage> {
                 );
               },
             ),
+            // A list tile leading to the PropertiesOwnedPage
             ListTile(
               title: Text('My properties'),
               onTap:() {
@@ -166,6 +186,7 @@ class _WalletPageState extends State<WalletPage> {
                 );
               },
             ),
+            // A list tile leading to the ListedPropertiesPage
             ListTile(
               title: Text('My listings'),
               onTap:() {
@@ -174,22 +195,7 @@ class _WalletPageState extends State<WalletPage> {
                 );
               },
             ),
-            ListTile(
-              title: Text('My profile'),
-              onTap:() {
-                Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),
-                );
-              },
-            ),
-            ListTile(
-              title: Text('My profile'),
-              onTap:() {
-                Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),
-                );
-              },
-            ),
+            // A list tile leading to the ProfilePage
             ListTile(
               title: Text('My profile'),
               onTap:() {
@@ -205,6 +211,7 @@ class _WalletPageState extends State<WalletPage> {
   }
 }
 
+// The Transaction class. Represents a single transaction and includes necessary details such as type, amount, date, etc.
 class Transaction {
   final String type;
   final double amount;

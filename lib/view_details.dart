@@ -24,6 +24,11 @@ class PropertyDetailsPage extends StatefulWidget {
   final String property_ID ;
   final Transaction? history;
   final Listing listing;
+  final double date;
+  final String buyer;
+  final String propertyID;
+  final String transactionID;
+
 
   PropertyDetailsPage({
     required this.imageUrl,
@@ -35,6 +40,12 @@ class PropertyDetailsPage extends StatefulWidget {
     required this.property_type, 
     required this.property_ID,
     required this.history,
+    required this.date,
+    required this.buyer,
+    required this.propertyID,
+    required this.transactionID
+
+
   });
 
   @override

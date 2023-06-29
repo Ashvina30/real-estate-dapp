@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:test/Listings.dart';
-import 'package:test/add_listing.dart';
+import 'package:test/Offers_received.dart';
+import 'package:test/add_listing.dart' hide Listing;
 import 'package:test/view_details.dart';
 import 'package:test/wallet.dart';
 import 'package:test/view_profile.dart';
+import 'add_listing.dart';
 import 'signup.dart';
-import 'saved.dart';
+import 'saved.dart' hide Listing;
 import 'package:test/smart_contract_link.dart';
 import 'package:provider/provider.dart';
+import 'Offers_received.dart';
+import 'view_details.dart';
+
 
 class OwnedProperties {
   final String imageUrl;
   final String title;
-  final String description;
+  //final String description;
   final String price;
 
   OwnedProperties({
     required this.imageUrl,
     required this.title,
-    required this.description,
+    //required this.description,
     required this.price,
   });
 }
@@ -131,6 +136,24 @@ Widget build(BuildContext context) {
                     color: Colors.white,
                   ),
                 ),
+                ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => PropertyDetailsPage(
+                                        listing: Listing(
+                                          imageUrl: listing.imageUrl,
+                                          title: listing.title,
+                                          description: listing.description,
+                                          price: listing.price, propertyType: '', id: '', address: ''
+                                        ), address: '', description: '', imageUrl: '', price: 0.0, history: null, property_ID: '', property_type: '', seller_name: '', buyer: '', date: null, propertyID: '', transactionID: '',
+                                    ),
+                                    ),
+                                  );
+                                },
+                                child: const Text('View details'),
+                              ),
               ],
             ),
           ),
@@ -180,11 +203,11 @@ Widget build(BuildContext context) {
             },
           ),
           ListTile(
-            title: Text('My profile'),
+            title: Text('My offers'),
             onTap: () {
               Navigator.push(
                 context, 
-                MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),
+                MaterialPageRoute(builder: (context) => OffersReceivedPage(email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '', ListedProperties: null, description: '', image: '', imageUrl: '', ownerName: '', price: '', property: null,)),
               );
             },
           ),

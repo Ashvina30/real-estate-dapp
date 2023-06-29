@@ -16,7 +16,7 @@ class OffersReceivedPage extends StatefulWidget {
   final String price;
   final String ownerName;
 
-  OffersReceivedPage({required this.image, required this.price, required this.ownerName, required ListedProperties, required String address, required String description, required String imageUrl, required ListedProperties property});
+  OffersReceivedPage({required this.image, required this.price, required this.ownerName, required ListedProperties, required String address, required String description, required String imageUrl, required ListedProperties property, required String ID_number, required String email, required String IDnumber, required String phoneNumber});
 
   @override
   _OffersReceivedPageState createState() => _OffersReceivedPageState();

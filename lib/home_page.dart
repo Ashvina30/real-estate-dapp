@@ -147,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                                           title: listing.title,
                                           description: listing.description,
                                           price: listing.price, propertyType: '', id: ''
-                                        ), address: '', description: '', imageUrl: '', price: 0.0, history: null, property_ID: '', property_type: '', seller_name: '',
+                                        ), address: '', description: '', imageUrl: '', price: 0.0, history: null, property_ID: '', property_type: '', seller_name: '', buyer: '', date: null, propertyID: '', transactionID: '',
                                     ),
                                     ),
                                   );
@@ -229,15 +229,7 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             ListTile(
-              title: Text('My profile'),
-              onTap:() {
-                Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),
-                );
-              },
-            ),
-            ListTile(
-              title: Text('My profile'),
+              title: Text('My offers'),
               onTap:() {
                 Navigator.push(
                   context, MaterialPageRoute(builder: (context) => ProfilePage(name: '', email: '', address: '', phoneNumber: '', ID_number: '', IDnumber: '',)),

@@ -10,6 +10,8 @@ import 'saved.dart';
 import 'Offers_received.dart';
 import 'package:test/smart_contract_link.dart';
 import 'package:provider/provider.dart'; // Import the provider package
+import 'Offers_received.dart';
+
 
 class ListedProperties {
   final String imageUrl;
@@ -133,6 +135,24 @@ class _ListedPropertiesPageState extends State<ListedPropertiesPage> {
                 ],
               ),
             ),
+             ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => PropertyDetailsPage(
+                                        listing: Listing(
+                                          imageUrl: listing.imageUrl,
+                                          title: listing.title,
+                                          description: listing.description,
+                                          price: listing.price, propertyType: '', id: ''
+                                        ), address: '', description: '', imageUrl: '', price: 0.0, history: null, property_ID: '', property_type: '', seller_name: '', buyer: '', date: null, propertyID: '', transactionID: '',
+                                    ),
+                                    ),
+                                  );
+                                },
+                                child: const Text('View details'),
+                              ),
             ListTile(
               title: Text('My Wallet'),
               onTap:() {

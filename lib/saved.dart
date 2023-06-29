@@ -208,7 +208,7 @@ class _FavoritePageState extends State<FavoritePage> {
                                     title: property.title,
                                     description: property.description,
                                     price: property.price
-                                  ), address: '', description: '', imageUrl: '', price: 0.0, history: null, property_ID: '', property_type: '', seller_name: '', 
+                                  ), address: '', description: '', imageUrl: '', price: 0.0, history: null, property_ID: '', property_type: '', seller_name: '', buyer: '', 
                                 ),
                               ),
                             );
